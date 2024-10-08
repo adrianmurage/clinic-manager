@@ -8,5 +8,35 @@
     "address": "kwao",
     "id": "1727785869341",
     "createdAt": "2024-10-01T12:31:09.341Z"
+  },
+  {
+    "fullName": "adrian",
+    "dateOfBirth": "1999-06-14",
+    "gender": "male",
+    "contactNumber": "209284802920",
+    "email": "adrian@gmail.com",
+    "address": "N/A",
+    "id": "1728387196404",
+    "createdAt": "2024-10-08T11:33:16.404Z"
+  },
+  {
+    "fullName": "john",
+    "dateOfBirth": "2333-03-31",
+    "gender": "male",
+    "contactNumber": "0903208322",
+    "email": "john@gmail.com",
+    "address": "N/A",
+    "id": "1728388715360",
+    "createdAt": "2024-10-08T11:58:35.360Z"
+  },
+  {
+    "fullName": "faoienwoi",
+    "dateOfBirth": "2024-02-04",
+    "gender": "male",
+    "contactNumber": "20029302830",
+    "email": "adioen@gmail.com",
+    "address": "aoidnio\r\n",
+    "id": "1728388983904",
+    "createdAt": "2024-10-08T12:03:03.904Z"
   }
 ]

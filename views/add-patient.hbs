@@ -16,22 +16,24 @@
       src='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js'
     ></script>
   </head>
+
   <body>
     <div class='uk-container uk-margin-top'>
       <div class='uk-flex uk-flex-between uk-margin-bottom'>
-        <h1 class='uk-heading-small'>Add New Patient</h1>
+        <h1 class='uk-heading-small'>CMS</h1>
         <div>
-          <a href='/' class='uk-button uk-button-secondary'>Home</a>
+          <a href='/' class='uk-button uk-button-primary'>Home</a>
+          <a href='/logout' class='uk-button uk-button-secondary'>Logout</a>
         </div>
       </div>
     </div>
     <div class='uk-container uk-container-small uk-margin-top'>
-
       <form
-        class='uk-form-stacked uk-margin-large-top'
+        class='uk-form-stacked uk-margin-medium-top'
         action='/add-patient'
         method='POST'
       >
+        <h2 class='uk-heading-small'>Add New Patient</h2>
         <div class='uk-margin'>
           <label class='uk-form-label' for='full-name'>Full Name</label>
           <div class='uk-form-controls'>
@@ -115,4 +117,5 @@
       </div>
     </div>
   </body>
+
 </html>

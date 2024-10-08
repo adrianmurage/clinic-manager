@@ -1,3 +1,106 @@
-<h1>Doctor Dashboard</h1>
-<a href="/patients">View Patients</a>
-<a href="/logout">Logout</a>
+<!DOCTYPE html>
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Doctor Dashboard - Patient List</title>
+    <!-- UIkit CSS -->
+    <link
+      rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/uikit@3.17.3/dist/css/uikit.min.css'
+    />
+  </head>
+  <body>
+
+    <div class='uk-container uk-margin-top'>
+      <div class='uk-flex uk-flex-between uk-margin-bottom'>
+        <h1 class='uk-heading-small'>CMS - Doctor Dashboard</h1>
+        <div>
+          <a href='/' class='uk-button uk-button-primary'>Home</a>
+          <a href='/logout' class='uk-button uk-button-secondary'>Logout</a>
+        </div>
+      </div>
+
+      <!-- Add search input -->
+      <div class="uk-margin">
+        <input class="uk-input uk-width-1-3" type="text" id="patientSearch" placeholder="Search patient by name...">
+      </div>
+
+      <table
+        class='uk-table uk-table-striped uk-table-hover uk-table-responsive'
+        id="patientTable"
+      >
+        <thead>
+          <tr>
+            <th>Full Name</th>
+            <th>Date of Birth</th>
+            <th>Gender</th>
+            <th>Phone Number</th>
+            <th>Email</th>
+            <th>Created At</th>
+            <th>Actions</th>
+          </tr>
+        </thead>
+        <tbody>
+          {{#each patients}}
+            <tr>
+              <td>{{this.fullName}}</td>
+              <td>{{this.dateOfBirth}}</td>
+              <td>{{this.gender}}</td>
+              <td>{{this.contactNumber}}</td>
+              <td>{{this.email}}</td>
+              <td>{{formatDate this.createdAt}}</td>
+              <td>
+                <a
+                  href='/edit-patient/{{this.id}}'
+                  class='uk-button uk-button-primary uk-button-small'
+                >Edit</a>
+              </td>
+            </tr>
+          {{else}}
+            <tr>
+              <td colspan='9' class='uk-text-center'>
+                <div class='uk-alert-warning' uk-alert>
+                  <p>No patients found</p>
+                </div>
+              </td>
+            </tr>
+          {{/each}}
+        </tbody>
+      </table>
+    </div>
+
+    <!-- UIkit JS -->
+    <script
+      src='https://cdn.jsdelivr.net/npm/uikit@3.17.3/dist/js/uikit.min.js'
+    ></script>
+    <script
+      src='https://cdn.jsdelivr.net/npm/uikit@3.17.3/dist/js/uikit-icons.min.js'
+    ></script>
+
+    <!-- Add custom JavaScript for search functionality -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const searchInput = document.getElementById('patientSearch');
+        const table = document.getElementById('patientTable');
+        const rows = table.getElementsByTagName('tr');
+
+        searchInput.addEventListener('keyup', function() {
+          const searchTerm = searchInput.value.toLowerCase();
+
+          for (let i = 1; i < rows.length; i++) {
+            const nameCell = rows[i].getElementsByTagName('td')[0];
+            if (nameCell) {
+              const name = nameCell.textContent || nameCell.innerText;
+              if (name.toLowerCase().indexOf(searchTerm) > -1) {
+                rows[i].style.display = '';
+              } else {
+                rows[i].style.display = 'none';
+              }
+            }
+          }
+        });
+      });
+    </script>
+  </body>
+</html>

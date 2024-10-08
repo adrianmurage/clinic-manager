@@ -12,7 +12,7 @@ const requireAuth = (req, res, next) => {
   if (req.session.isAuthenticated) {
     next();
   } else {
-    res.redirect('/login');
+    res.redirect('/');
   }
 };
 
@@ -78,18 +78,6 @@ router.get('/patient-added', (req, res) => {
   res.render('patient-added', { patient: null });
 });
 
-// New route for listing all patients
-router.get('/patients', requireAuth, async (req, res) => {
-  try {
-    const filePath = path.join(__dirname, '..', 'data', 'patients.json');
-    const data = await fs.readFile(filePath, 'utf8');
-    const patients = JSON.parse(data);
 
-    res.render('patients', { patients });
-  } catch (error) {
-    console.error('Error fetching patients:', error);
-    res.status(500).render('error', { message: 'Error fetching patients' });
-  }
-});
 
 export default router;
