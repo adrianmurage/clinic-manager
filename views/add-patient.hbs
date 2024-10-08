@@ -1,0 +1,118 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Add New Patient - Clinic Management System</title>
+    <!-- UIkit CSS -->
+    <link
+      rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css'
+    />
+    <!-- UIkit JS -->
+    <script
+      src='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js'
+    ></script>
+    <script
+      src='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js'
+    ></script>
+  </head>
+  <body>
+    <div class='uk-container uk-margin-top'>
+      <div class='uk-flex uk-flex-between uk-margin-bottom'>
+        <h1 class='uk-heading-small'>Add New Patient</h1>
+        <div>
+          <a href='/' class='uk-button uk-button-secondary'>Home</a>
+        </div>
+      </div>
+    </div>
+    <div class='uk-container uk-container-small uk-margin-top'>
+
+      <form
+        class='uk-form-stacked uk-margin-large-top'
+        action='/add-patient'
+        method='POST'
+      >
+        <div class='uk-margin'>
+          <label class='uk-form-label' for='full-name'>Full Name</label>
+          <div class='uk-form-controls'>
+            <input
+              class='uk-input'
+              id='full-name'
+              name='fullName'
+              type='text'
+              required
+            />
+          </div>
+        </div>
+
+        <div class='uk-margin'>
+          <label class='uk-form-label' for='date-of-birth'>Date of Birth</label>
+          <div class='uk-form-controls'>
+            <input
+              class='uk-input'
+              id='date-of-birth'
+              name='dateOfBirth'
+              type='date'
+              required
+            />
+          </div>
+        </div>
+
+        <div class='uk-margin'>
+          <label class='uk-form-label' for='gender'>Gender</label>
+          <div class='uk-form-controls'>
+            <select class='uk-select' id='gender' name='gender' required>
+              <option value=''>Select gender</option>
+              <option value='male'>Male</option>
+              <option value='female'>Female</option>
+              <option value='other'>Other</option>
+            </select>
+          </div>
+        </div>
+
+        <div class='uk-margin'>
+          <label class='uk-form-label' for='contact-number'>Contact Number</label>
+          <div class='uk-form-controls'>
+            <input
+              class='uk-input'
+              id='contact-number'
+              name='contactNumber'
+              type='tel'
+              required
+            />
+          </div>
+        </div>
+
+        <div class='uk-margin'>
+          <label class='uk-form-label' for='email'>Email Address</label>
+          <div class='uk-form-controls'>
+            <input class='uk-input' id='email' name='email' type='email' />
+          </div>
+        </div>
+
+        <div class='uk-margin'>
+          <label class='uk-form-label' for='address'>Address</label>
+          <div class='uk-form-controls'>
+            <textarea
+              class='uk-textarea'
+              id='address'
+              name='address'
+              rows='3'
+            ></textarea>
+          </div>
+        </div>
+
+        <div class='uk-margin'>
+          <button
+            class='uk-button uk-button-primary uk-width-1-1'
+            type='submit'
+          >Add Patient</button>
+        </div>
+      </form>
+
+      <div class='uk-margin-large-top uk-text-center'>
+        <a href='/' class='uk-button uk-button-default'>Back to Home</a>
+      </div>
+    </div>
+  </body>
+</html>

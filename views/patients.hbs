@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient List</title>
+    <!-- UIkit CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.17.3/dist/css/uikit.min.css" />
+</head>
+<body>
+
+    <div class="uk-container uk-margin-top">
+        <div class="uk-flex uk-flex-between uk-margin-bottom">
+            <h1 class="uk-heading-small">Patient List</h1>
+            <div>
+                <a href="/" class="uk-button uk-button-secondary">Home</a>
+                <a href="/logout" class="uk-button uk-button-primary">Logout</a>
+            </div>
+        </div>
+
+        {{#each patients}}
+            <ul class="uk-list uk-list-striped">
+                <li>{{this.fullName}} - {{this.dateOfBirth}}</li>
+            </ul>
+        {{else}}
+            <div class="uk-alert-warning" uk-alert>
+                <a class="uk-alert-close" uk-close></a>
+                <p>No patients found</p>
+            </div>
+        {{/each}}
+    </div>
+
+    <!-- UIkit JS -->
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.3/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.17.3/dist/js/uikit-icons.min.js"></script>
+</body>
+</html>

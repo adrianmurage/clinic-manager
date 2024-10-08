@@ -1,0 +1,88 @@
+<html lang='en'>
+  <head>
+    <meta charset='UTF-8' />
+    <meta name='viewport' content='width=device-width, initial-scale=1.0' />
+    <title>Clinic Management System - Login</title>
+    <!-- UIkit CSS -->
+    <link
+      rel='stylesheet'
+      href='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css'
+    />
+    <!-- UIkit JS -->
+    <script
+      src='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js'
+    ></script>
+    <script
+      src='https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js'
+    ></script>
+  </head>
+  <body>
+    <div
+      class='uk-section uk-section-muted uk-flex uk-flex-middle uk-animation-fade'
+      uk-height-viewport
+    >
+      <div class='uk-width-1-1'>
+        <div class='uk-container'>
+          <div class='uk-grid-margin uk-grid uk-grid-stack' uk-grid>
+            <div class='uk-width-1-1@m'>
+              <div
+                class='uk-margin uk-width-large uk-margin-auto uk-card uk-card-default uk-card-body uk-box-shadow-large'
+              >
+                <h3 class='uk-card-title uk-text-center'>Welcome to your Clinic
+                  Management System</h3>
+                <form class='uk-form-stacked' action='/login' method='POST'>
+                  <!-- CSRF Token -->
+                  <input type='hidden' name='_csrf' value='{{csrfToken}}' />
+
+                  {{#if error}}
+                    <div class='uk-alert-danger' uk-alert>
+                      <a class='uk-alert-close' uk-close></a>
+                      <p>{{error}}</p>
+                    </div>
+                  {{/if}}
+
+                  <div class='uk-margin'>
+                    <label class='uk-form-label' for='username'>Username</label>
+                    <div class='uk-form-controls'>
+                      <input
+                        class='uk-input'
+                        type='text'
+                        id='username'
+                        name='username'
+                        required
+                        aria-required='true'
+                        placeholder='Enter your username'
+                      />
+                    </div>
+                  </div>
+
+                  <div class='uk-margin'>
+                    <label class='uk-form-label' for='password'>Password</label>
+                    <div class='uk-form-controls'>
+                      <input
+                        class='uk-input'
+                        type='password'
+                        id='password'
+                        name='password'
+                        required
+                        aria-required='true'
+                        placeholder='Enter your password'
+                      />
+                    </div>
+                  </div>
+
+                  <div class='uk-margin'>
+                    <button
+                      class='uk-button uk-button-primary uk-width-1-1'
+                      type='submit'
+                    >Login</button>
+                  </div>
+                </form>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

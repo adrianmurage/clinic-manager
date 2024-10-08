@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Patient Added Successfully - Clinic Management System</title>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/css/uikit.min.css" />
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/uikit@3.16.22/dist/js/uikit-icons.min.js"></script>
+</head>
+<body>
+    <div class="uk-container uk-container-small uk-margin-large-top">
+        <div class="uk-card uk-card-default uk-card-body uk-width-1-1">
+            <div class="uk-card-badge uk-label uk-label-success">Success</div>
+            <h1 class="uk-card-title uk-text-center">Patient Added Successfully!</h1>
+            
+            <div class="uk-alert-success" uk-alert>
+                <p>The new patient has been successfully added to the system.</p>
+            </div>
+
+            <h3 class="uk-heading-divider">Patient Details:</h3>
+            <dl class="uk-description-list">
+                <dt>Full Name:</dt>
+                <dd>{{patient.fullName}}</dd>
+                
+                <dt>Date of Birth:</dt>
+                <dd>{{patient.dateOfBirth}}</dd>
+                
+                <dt>Gender:</dt>
+                <dd>{{patient.gender}}</dd>
+                
+                <dt>Contact Number:</dt>
+                <dd>{{patient.contactNumber}}</dd>
+                
+                <dt>Email Address:</dt>
+                <dd>{{patient.email}}</dd>
+                
+                <dt>Address:</dt>
+                <dd>{{patient.address}}</dd>
+            </dl>
+
+            <div class="uk-margin-top uk-flex uk-flex-center">
+                <a href="/" class="uk-button uk-button-primary uk-margin-right">Back to Home</a>
+                <a href="/add-patient" class="uk-button uk-button-secondary">Add Another Patient</a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
